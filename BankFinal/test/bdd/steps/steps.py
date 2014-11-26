@@ -1,7 +1,8 @@
 from nose.tools import assert_equal, assert_in
 from lettuce import *
 from webtest import TestApp
-from bank_app import app
+from bank.account import Account
+from bank_app import app, BANK
 
 @step(u'I visit the homepage')
 def i_visit_the_homepage(step):
@@ -21,3 +22,9 @@ def when_i_enter_the_account_number_group1(step, account_number):
 def then_i_see_a_balance_of_group1(step, expected_balance):
     assert_in ("Balance: {}".format(expected_balance),
     world.form_response.text)
+
+ 
+@step(u'I create account "([^"]*)" with balance of "([^"]*)"')
+def i_create_account_with_balance_of_group1(step, account_number, balance):
+    a = Account(account_number, balance)
+    BANK.add_account(a)

@@ -1,17 +1,16 @@
-from flask import Flask, render_template, request
-from bank.bank import Bank
-from bank.account import Account
-
-app = Flask(__name__) 
-BANK = Bank()
-account = Account("1111", 50)
-BANK.add_account(account)
+from flask import Flask, render_template
+app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    account_number = request.args.get('account_number')
-    balance = BANK.get_account_balance(account_number)
-    return render_template('index.html', balance=balance)
+    return 'Hello World!'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+
+
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+return render_template ('index.html')

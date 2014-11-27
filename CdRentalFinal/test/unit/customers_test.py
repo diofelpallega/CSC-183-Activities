@@ -1,6 +1,6 @@
 import unittest
-from customer import Customer
-from customers import Customers
+from cd.customer import Customer
+from cd.customers import Customers
 
 
 class CustomersTest(unittest.TestCase):

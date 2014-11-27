@@ -1,6 +1,6 @@
 import unittest
-from cd import *
-from cds import *
+from cd.cd import *
+from cd.cds import *
 
 class CdsTest(unittest.TestCase):
 	def test_cds_is_initially_empty(self):

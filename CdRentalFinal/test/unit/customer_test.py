@@ -1,5 +1,5 @@
 import unittest
-from customer import *
+from cd.customer import *
 
 class TestCustomer(unittest.TestCase):
     def test_if_customer_account_can_be_created(self):

@@ -1,6 +1,6 @@
 ﻿
 import unittest
-from cd import *
+from cd.cd import *
 
 class TestCustomer(unittest.TestCase):
     def test_if_customer_account_can_be_created(self):

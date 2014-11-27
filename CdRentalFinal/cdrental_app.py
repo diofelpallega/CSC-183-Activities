@@ -1,13 +1,13 @@
-from cd import *
-from clerk import *
-from customers import *
-from cds import *
-from clerk import *
+from cd.cd import *
+from cd.clerk import *
+from cd.customers import *
+from cd.cds import *
+from cd.clerk import *
 from flask import Flask
 
 app = Flask(__name__)
 customers = Customers()
-cds = cds()
+cds = Cds()
 
 
 

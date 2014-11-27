@@ -1,9 +1,9 @@
 import unittest
-from customer import *
-from customers import *
-from cds import *
+from cd.customer import *
+from cd.customers import *
+from cd.cds import *
 from cd import *
-from clerk import *
+from cd.clerk import *
 
 class TestClerk(unittest.TestCase):
 

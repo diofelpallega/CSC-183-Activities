@@ -13,3 +13,13 @@ class Singleton(object):
             cls.instance = super(Singleton, cls).__new__(cls)
         return cls.instance
 
+class ImageDownloaderThread(threading.Thread):
+    """A thread for downloading images in parallel."""
+    def __init__(self, thread_id, name, counter):
+        threading.Thread.__init__(self)
+        self.name = name
+
+    def run(self):
+        print 'Starting thread ', self.name
+        download_images(self.name)
+        print 'Finished thread ', self.name

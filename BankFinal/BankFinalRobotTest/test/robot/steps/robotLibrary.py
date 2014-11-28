@@ -1,4 +1,4 @@
-﻿from nose.tools import assert_equal, assert_in
+from nose.tools import assert_equal, assert_in
 from webtest import TestApp
 from bank.bank_app import app, BANK
 from bank.account import Account
@@ -25,4 +25,4 @@ class robotLibrary(object):
         assert_equal(self.form_response.status_code, 200)
 
     def Get_Balance(self, expected_balance):
-        assert_in("Balance: {}".format(expected_balance), self.form_response.text)
+        assert_in("Balance: {}".format(expected_balance), self.form_response.text)﻿

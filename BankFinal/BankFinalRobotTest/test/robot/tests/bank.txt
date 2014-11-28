@@ -2,12 +2,11 @@
 Documentation    Example Robot tests for
 ...              Bank application
 
-Resource         ../steps/resource.txt
-Resource         ../steps/steps.txt
-
+Resource         test/robot/steps/resource.txt
+Resource         test/robot/steps/steps.txt
 
 *** Test Cases ***
 Retrieve customer balance
     Given I create the account 1111 with balance 50
     When I retrieve the account 1111
-    And the balance should be 50
+    And the balance should be 50﻿

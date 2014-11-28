@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20141128 11:34:03.097" generator="Robot 2.8.4 (Python 2.7.6 on linux2)">
+<robot generated="20141128 14:45:07.114" generator="Robot 2.8.4 (Python 2.7.6 on linux2)">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot" id="s1" name="Robot">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/tests" id="s1-s1" name="Tests">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/tests/bank.txt" id="s1-s1-s1" name="Bank">
@@ -8,52 +8,35 @@
 <doc></doc>
 <arguments>
 </arguments>
-<kw type="kw" name="robotLibrary.Create Account">
-<doc></doc>
-<arguments>
-<arg>${account_number}</arg>
-<arg>${balance}</arg>
-</arguments>
-<status status="PASS" endtime="20141128 11:34:03.353" starttime="20141128 11:34:03.353"></status>
-</kw>
-<status status="PASS" endtime="20141128 11:34:03.354" starttime="20141128 11:34:03.352"></status>
-</kw>
-<kw type="kw" name="steps.When I retrieve the account 1111">
+<kw type="kw" name="Create Account ${account_number} ${balance}">
 <doc></doc>
 <arguments>
 </arguments>
-<kw type="kw" name="robotLibrary.Visit Homepage">
-<doc></doc>
-<arguments>
-</arguments>
-<msg timestamp="20141128 11:34:03.357" level="WARN">Exception on / [GET]</msg>
-<msg timestamp="20141128 11:34:03.359" level="FAIL">AppError: Bad response: 500 INTERNAL SERVER ERROR (not 200 OK or 3xx redirect for http://localhost:5000/)
-'&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;\n&lt;title&gt;500 Internal Server Error&lt;/title&gt;\n&lt;h1&gt;Internal Server Error&lt;/h1&gt;\n&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;\n'</msg>
-<status status="FAIL" endtime="20141128 11:34:03.359" starttime="20141128 11:34:03.355"></status>
+<msg timestamp="20141128 14:45:07.157" level="FAIL">No keyword with name 'Create Account ${account_number} ${balance}' found.</msg>
+<status status="FAIL" endtime="20141128 14:45:07.157" starttime="20141128 14:45:07.157"></status>
 </kw>
-<status status="FAIL" endtime="20141128 11:34:03.359" starttime="20141128 11:34:03.354"></status>
+<status status="FAIL" endtime="20141128 14:45:07.157" starttime="20141128 14:45:07.156"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="FAIL" endtime="20141128 11:34:03.359" critical="yes" starttime="20141128 11:34:03.351">AppError: Bad response: 500 INTERNAL SERVER ERROR (not 200 OK or 3xx redirect for http://localhost:5000/)
-'&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;\n&lt;title&gt;500 Internal Server Error&lt;/title&gt;\n&lt;h1&gt;Internal Server Error&lt;/h1&gt;\n&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;\n'</status>
+<status status="FAIL" endtime="20141128 14:45:07.158" critical="yes" starttime="20141128 14:45:07.155">No keyword with name 'Create Account ${account_number} ${balance}' found.</status>
 </test>
 <doc>Example Robot tests for
 Bank application</doc>
 <metadata>
 </metadata>
-<status status="FAIL" endtime="20141128 11:34:03.360" starttime="20141128 11:34:03.130"></status>
+<status status="FAIL" endtime="20141128 14:45:07.159" starttime="20141128 14:45:07.146"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="FAIL" endtime="20141128 11:34:03.361" starttime="20141128 11:34:03.127"></status>
+<status status="FAIL" endtime="20141128 14:45:07.159" starttime="20141128 14:45:07.144"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="FAIL" endtime="20141128 11:34:03.361" starttime="20141128 11:34:03.098"></status>
+<status status="FAIL" endtime="20141128 14:45:07.160" starttime="20141128 14:45:07.115"></status>
 </suite>
 <statistics>
 <total>
@@ -69,6 +52,27 @@ Bank application</doc>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20141128 11:34:03.357" level="WARN">Exception on / [GET]</msg>
+<msg timestamp="20141128 14:45:07.150" level="ERROR">Error in file '/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/steps/resource.txt': Importing test library '/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/steps/robotLibrary.py' failed: SyntaxError: Non-ASCII character '\xef' in file /home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/steps/robotLibrary.py on line 28, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details (robotLibrary.py, line 28)
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/lib/python2.7/dist-packages/robot/libraries
+  /usr/local/lib/python2.7/dist-packages
+  /usr/local/bin
+  /usr/local/lib/python2.7/dist-packages/pip-1.5.6-py2.7.egg
+  /usr/lib/python2.7/dist-packages
+  /usr/lib/python2.7
+  /usr/lib/python2.7/plat-x86_64-linux-gnu
+  /usr/lib/python2.7/lib-tk
+  /usr/lib/python2.7/lib-old
+  /usr/lib/python2.7/lib-dynload
+  /usr/lib/python2.7/dist-packages/PILcompat
+  /usr/lib/python2.7/dist-packages/gst-0.10
+  /usr/lib/python2.7/dist-packages/gtk-2.0
+  /usr/lib/pymodules/python2.7
+  /usr/lib/python2.7/dist-packages/ubuntu-sso-client
+  /usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode
+  .
+  /home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest</msg>
 </errors>
 </robot>

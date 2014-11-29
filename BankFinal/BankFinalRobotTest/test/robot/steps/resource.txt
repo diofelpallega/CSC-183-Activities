@@ -1,7 +1,7 @@
-*** Settings ***
-Documentation    A resource file with reusable variables.
+ *** Settings ***
+Documentation     A resource file with reusable variables.
 
-Library          robotLibrary.py
+Library           robotLibrary.py
 
 *** Variables ***
-${SERVER}        localhost:5000﻿
+${SERVER}         localhost:5000

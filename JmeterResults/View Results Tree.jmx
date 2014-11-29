@@ -92,30 +92,66 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
       </hashTree>
       <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
         <collectionProp name="load_profile">
-          <collectionProp name="82769987">
+          <collectionProp name="85434468">
             <stringProp name="53">5</stringProp>
             <stringProp name="53">5</stringProp>
             <stringProp name="60">60</stringProp>
           </collectionProp>
-          <collectionProp name="1584315">
+          <collectionProp name="-297914684">
             <stringProp name="1567">10</stringProp>
             <stringProp name="1567">10</stringProp>
             <stringProp name="60">60</stringProp>
           </collectionProp>
-          <collectionProp name="1615067">
+          <collectionProp name="-294433756">
             <stringProp name="1598">20</stringProp>
             <stringProp name="1598">20</stringProp>
             <stringProp name="60">60</stringProp>
           </collectionProp>
-          <collectionProp name="1584315">
+          <collectionProp name="-297914684">
             <stringProp name="1567">10</stringProp>
             <stringProp name="1567">10</stringProp>
             <stringProp name="60">60</stringProp>
           </collectionProp>
-          <collectionProp name="82427">
+          <collectionProp name="85434468">
             <stringProp name="53">5</stringProp>
             <stringProp name="53">5</stringProp>
             <stringProp name="60">60</stringProp>

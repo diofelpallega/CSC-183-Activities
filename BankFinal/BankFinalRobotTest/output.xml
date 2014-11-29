@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20141129 23:53:30.403" generator="Robot 2.8.4 (Python 2.7.8 on linux2)">
+<robot generated="20141129 23:58:55.857" generator="Robot 2.8.4 (Python 2.7.8 on linux2)">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot" id="s1" name="Robot">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/tests" id="s1-s1" name="Tests">
 <suite source="/home/supersherlock/Desktop/CSC-183-Activities/BankFinal/BankFinalRobotTest/test/robot/tests/bank.txt" id="s1-s1-s1" name="Bank">
@@ -14,9 +14,9 @@
 <arg>${account_number}</arg>
 <arg>${balance}</arg>
 </arguments>
-<status status="PASS" endtime="20141129 23:53:30.649" starttime="20141129 23:53:30.649"></status>
+<status status="PASS" endtime="20141129 23:58:56.218" starttime="20141129 23:58:56.217"></status>
 </kw>
-<status status="PASS" endtime="20141129 23:53:30.649" starttime="20141129 23:53:30.648"></status>
+<status status="PASS" endtime="20141129 23:58:56.219" starttime="20141129 23:58:56.216"></status>
 </kw>
 <kw type="kw" name="steps.When I retrieve the account 1111">
 <doc></doc>
@@ -26,18 +26,18 @@
 <doc></doc>
 <arguments>
 </arguments>
-<status status="PASS" endtime="20141129 23:53:30.657" starttime="20141129 23:53:30.650"></status>
+<status status="PASS" endtime="20141129 23:58:56.235" starttime="20141129 23:58:56.221"></status>
 </kw>
 <kw type="kw" name="robotLibrary.Enter Account">
 <doc></doc>
 <arguments>
 <arg>${account_number}</arg>
 </arguments>
-<status status="PASS" endtime="20141129 23:53:30.668" starttime="20141129 23:53:30.657"></status>
+<status status="PASS" endtime="20141129 23:58:56.255" starttime="20141129 23:58:56.235"></status>
 </kw>
-<status status="PASS" endtime="20141129 23:53:30.669" starttime="20141129 23:53:30.650"></status>
+<status status="PASS" endtime="20141129 23:58:56.255" starttime="20141129 23:58:56.220"></status>
 </kw>
-<kw type="kw" name="steps.And the balance should be 50">
+<kw type="kw" name="steps.And the balance should be 1000">
 <doc></doc>
 <arguments>
 </arguments>
@@ -46,42 +46,43 @@
 <arguments>
 <arg>${balance}</arg>
 </arguments>
-<status status="PASS" endtime="20141129 23:53:30.670" starttime="20141129 23:53:30.670"></status>
+<msg timestamp="20141129 23:58:56.260" level="FAIL">'Balance: 1000' not found in u'&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n\n\t&lt;head&gt;\n    \t&lt;title&gt;Bank App&lt;/title&gt;\n\t&lt;/head&gt;\n\n&lt;body&gt;\n\n&lt;form id="account-form"&gt;\n    &lt;label&gt;Acocunt Number: &lt;/label&gt;&lt;input name="account_number" type="text"/&gt;\n    &lt;input type="submit"/&gt;\n&lt;/form&gt;\n \n\nBalance: 50\n\n\n&lt;/body&gt;\n&lt;/html&gt;'</msg>
+<status status="FAIL" endtime="20141129 23:58:56.260" starttime="20141129 23:58:56.258"></status>
 </kw>
-<status status="PASS" endtime="20141129 23:53:30.670" starttime="20141129 23:53:30.669"></status>
+<status status="FAIL" endtime="20141129 23:58:56.260" starttime="20141129 23:58:56.256"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20141129 23:53:30.670" critical="yes" starttime="20141129 23:53:30.647"></status>
+<status status="FAIL" endtime="20141129 23:58:56.261" critical="yes" starttime="20141129 23:58:56.214">'Balance: 1000' not found in u'&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n\n\t&lt;head&gt;\n    \t&lt;title&gt;Bank App&lt;/title&gt;\n\t&lt;/head&gt;\n\n&lt;body&gt;\n\n&lt;form id="account-form"&gt;\n    &lt;label&gt;Acocunt Number: &lt;/label&gt;&lt;input name="account_number" type="text"/&gt;\n    &lt;input type="submit"/&gt;\n&lt;/form&gt;\n \n\nBalance: 50\n\n\n&lt;/body&gt;\n&lt;/html&gt;'</status>
 </test>
 <doc>Example Robot tests for
 Bank application</doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20141129 23:53:30.671" starttime="20141129 23:53:30.436"></status>
+<status status="FAIL" endtime="20141129 23:58:56.261" starttime="20141129 23:58:55.893"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20141129 23:53:30.671" starttime="20141129 23:53:30.434"></status>
+<status status="FAIL" endtime="20141129 23:58:56.262" starttime="20141129 23:58:55.889"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20141129 23:53:30.672" starttime="20141129 23:53:30.404"></status>
+<status status="FAIL" endtime="20141129 23:58:56.262" starttime="20141129 23:58:55.857"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" pass="1" id="s1" name="Robot">Robot</stat>
-<stat fail="0" pass="1" id="s1-s1" name="Tests">Robot.Tests</stat>
-<stat fail="0" pass="1" id="s1-s1-s1" name="Bank">Robot.Tests.Bank</stat>
+<stat fail="1" pass="0" id="s1" name="Robot">Robot</stat>
+<stat fail="1" pass="0" id="s1-s1" name="Tests">Robot.Tests</stat>
+<stat fail="1" pass="0" id="s1-s1-s1" name="Bank">Robot.Tests.Bank</stat>
 </suite>
 </statistics>
 <errors>

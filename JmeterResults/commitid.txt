@@ -1,3 +1,4 @@
 1cc25b12d12ba7f349c18a589a37306096e6415c   activity1  [throughput shaping timer]
 27839ec06d56b0efb47bf49f74171bb77e34fee9   activity2  [transactions per second]
 fb8f8f47b7e2b5637b5f60a11c26b31bae5f7bf5   activity3  [responce latencies over time]  
+6437a92130ad2f0504f9bc0e5abf4278e3e1f9b2   activity4  [composite graph]

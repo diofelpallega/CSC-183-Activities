@@ -1,0 +1,20 @@
+Feature: Tool for accessing web resources using
+	 HTTP or FTP protocol.
+
+	 I want to access web resources using HTTP or FTP protocol
+
+	 Scenario: Get web resources
+	 Given I have the following web resources:
+	 	 |   web_resources   |
+	 	 |	www.ubuntu.com	 |
+	 	 |	www.redhat.com	 |
+	 	 |	www.suse.com	 |
+	 	 |	www.maldrake.com |
+     And I have my localhost as my domain
+	 When I run the tool 
+	 Then I see the resources:
+	 	 |   web_resources   |
+	 	 |	www.ubuntu.com	 |
+	 	 |	www.redhat.com	 |
+	 	 |	www.suse.com	 |
+	 	 |	www.maldrake.com |

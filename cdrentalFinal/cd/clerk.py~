@@ -1,0 +1,50 @@
+from customer import *
+from cd import *
+from customers import *
+from cds import *
+from dosql import *
+import cgi
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
+ 
+b = doSql()	
+	
+   
+class Clerk(object):
+
+	def __init__(self, customers, cds): 
+		self.customers = customers
+		self.cds = cds
+
+
+	def checkout(self, customer_id, cd_id):
+		customers = self.customers  
+		cds = self.cds
+
+		 
+		if(type(customer_id) == str and type(cd_id) == str):
+			if((customers.get_customer_rented(customer_id) <= 3)):
+
+				if ((customer_id in customers.dictionary) and \
+					(customers.get_customer_rented(customer_id) <= 3)) :
+					customer_name = customers.dictionary[customer_id][0]
+					rented = customers.dictionary[customer_id][1]
+					rentedarray = customers.dictionary[customer_id][2]
+					query = "SELECT update_customer("+customer_name+","+rented+","+rentedarray+");" 
+   				        items = b.execqry(query,False) 
+					customers.update_add_customer_rented(customer_id)
+					cds.dictionary[cd_id][2] = customers.dictionary[customer_id][0] 
+					Array = customers.dictionary[customer_id][2] 
+					customers.dictionary[customer_id][2] = Array + [cds.get_cd_title(cd_id)]
+	
+				else:
+					print "Id does not exist"
+
+			else:
+				print "You have exceeded your renting limit" 
+				return "exceeded"
+		else:
+			print "invalid input"

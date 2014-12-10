@@ -1,0 +1,78 @@
+
+CREATE EXTENSION pgcrypto;
+CREATE TABLE customers(
+	customer_id serial primary key,
+	customer_name text unique,
+	rented int,
+	rented_array text 
+
+);
+
+ 
+
+create or replace function
+   check_customer(p_customername text)
+     returns text as
+$$
+   declare
+      customerid1 int;
+   begin
+      select into customerid1 customer_id from customers
+         where LOWER(customer_name) = LOWER(p_customername);
+	  
+      if customerid1 isnull then
+         return 'true';
+		 
+     else
+          return 'false';
+      end if; 
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT check_customer('p_customername')
+  
+
+create or replace function
+   update_customer(p_customername text, p_rented int, p_rentedArray text)
+     returns text as
+$$
+   declare
+      customerid1 int;
+   begin
+      select into customerid1 customer_id from customers
+         where customer_name = p_customername;
+	  
+      if customerid1 isnull then
+         insert into customers(customer_name,rented,rented_array) values
+            (p_customername,p_rented,p_rentedArray);
+     else
+          update customers
+			set customer_name = p_customerame, rented = p_rented, rented_array = p_rentedArray 
+			where customer_name = p_customername;
+      end if;
+	  return 'OK';
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT update_customer('p_customername' , 'rented','rentedArray')
+
+ 
+
+--view
+create or replace function
+   get_customer_perid(in int, out int,out text, out int, out text )
+returns setof record as
+$$
+	select customer_id,customer_name, rented, rented_array  from customers
+	where customer_id = $1;
+
+$$
+  language 'sql';
+
+-- HOW TO USE:
+-- select * from get_customer_perid(userid)
+ 
+
+

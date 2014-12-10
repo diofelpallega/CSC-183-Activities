@@ -1,0 +1,12 @@
+<html>
+<head> </head>
+ <title> Cd Rental </title>
+<body>
+<form>
+<h1> input customer id </h1>
+ <input name="Customer id"/>
+<h1> input cd id </h1>
+ <input name="cd id" />
+</form>
+</body> 
+</html>﻿

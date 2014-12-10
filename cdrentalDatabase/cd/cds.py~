@@ -1,0 +1,13 @@
+from cd import *
+from cd.dosql import *
+  
+b = doSql()
+class Cds(object):
+	def __init__(self):
+		pass
+
+	def add_cd(self,name,isrented,rentedby):  
+	        query2 = "SELECT update_cd(CAST (name AS text) , CAST (isrented AS text),CAST (rentedby AS text));" 
+		b.execqry(query2,True)
+   	        result = []
+	  	self.assertEqual(new, 'jack')	

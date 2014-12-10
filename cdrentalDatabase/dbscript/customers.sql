@@ -1,0 +1,206 @@
+ 
+CREATE TABLE customers( 
+	customer_rentalidref text,
+	customer_name text  ,
+	cdrented text  unique
+
+);
+
+  
+CREATE TABLE customerslist(
+	customer_id serial primary key,
+	customer_rentalid  text unique,
+	customer_name text 
+
+);
+
+create or replace function
+   add_customer(p_rentalid text,p_customername text )
+     returns text as
+$$
+   declare
+      customerid1 int;
+      counter int;
+   begin
+      select into customerid1 customer_rentalid from customerslist
+         where customer_rentalid = p_rentalid; 
+
+	if customerid1 isnull then
+		insert into customerslist(customer_rentalid,customer_name) values
+                        (p_rentalid,p_customername);
+	else
+           return 'Already added in the system';
+ 
+	end if;
+	    return 'OK';
+  
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT add_customer('p_rentalid','p_customername')
+
+
+
+
+create or replace function
+   check_customer(p_customername text)
+     returns text as
+$$
+   declare
+      customerid1 int;
+   begin
+      select into customerid1 customer_id from customers
+         where LOWER(customer_name) = LOWER(p_customername);
+	  
+      if customerid1 isnull then
+         return 'true';
+		 
+     else
+          return 'false';
+      end if; 
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT check_customer('p_customername')
+  
+
+create or replace function
+   update_customer(p_rentalid text,p_customername text, p_rented text)
+     returns text as
+$$
+   declare
+      customerid1 int;
+      counter int;
+   begin
+         select into customerid1 customer_rentalid from customerslist
+         where customer_rentalidref = p_rentalid; 
+		
+				
+	if customerid1 isnull then
+		return 'you are not added yet in the system';
+	else
+	    if (SELECT  count(*) FROM customers WHERE customer_name = p_customername < 2 )then
+	         
+	    	insert into customers(customer_rentalid ,customer_name,cdrented) values
+                        (p_rentalid,p_customername,p_rented);
+	    	
+      	    else
+	     return 'you have already borrowed 3 cds';
+		
+	end if;
+	    return 'OK';
+     end if;
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT update_customer('p_rentalid','p_customername' , 'rented')
+
+
+ 
+create or replace function
+   get_customer_rented(p_customerid text)
+     returns text as
+$$
+   declare
+      customerid1 int; 
+      customerrented1 text; 
+      customername text;
+   begin
+      select into customername customer_name from customers
+         where customer_rentalid = p_customerid;
+      select into customerid1 customer_rentalid from customers
+         where customer_name = p_customerid;
+       select into customerrented1 count(customer_name) from customers  
+              where customer_name=customername; 
+ 
+      if customerid1 isnull then
+         return 'no such Customer';
+     else
+          return customerrented1;
+      end if;
+	  return 'OK';
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT get_customer_rented('p_customerid')
+
+
+
+
+
+create or replace function
+   get_customer_name(p_customerid text)
+     returns text as
+$$
+   declare
+      customerid1 int; 
+      customername1 text; 
+   begin
+      select into customerid1 customer_id from customers
+         where customer_rentalidref = p_customerid;
+      select into customername1 customer_name from customers
+         where customer_rentalidref = p_customerid; 
+ 
+      if customerid1 isnull then
+         return 'no such Customer';
+     else
+          return customername1;
+      end if;
+	  return 'OK';
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT get_customer_name('p_customerid')
+
+
+
+
+create or replace function
+   get_customer_rentedarray(p_customerid text)
+     returns text as
+$$
+   declare
+      customerid1 int;
+      customerrentedarray1 text;
+   begin
+      select into customerid1 customer_id from customers
+         where customer_rentalidref = p_customerid; 
+      select into customerrentedarray1 cdrented from customers
+         where customer_rentalidref = p_customerid;
+ 
+      if customerid1 isnull then
+         return 'no such Customer';
+     else
+          return customerrentedarray1;
+      end if;
+	  return 'OK';
+  end;
+$$
+language 'plpgsql';
+-- HOW TO USE :
+-- SELECT get_customer_rentedarray('p_customerid')
+
+
+
+
+--view
+create or replace function
+   get_customer_perid(in text, out text,out text, out text)
+returns setof record as
+$$
+	select customer_rentalidref,customer_name , cdrented from customers
+	where customer_rentalid = $1;
+
+$$
+  language 'sql';
+
+-- HOW TO USE:
+-- select * from get_customer_perid(userid)
+ 
+
+

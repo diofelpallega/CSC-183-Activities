@@ -10,5 +10,5 @@ Feature: Using facade I want to get the forecast in London
 	 When I run the program
 	 Then I get the the following:
 	     | city   | country | forecast  |	  
-	     | London |    UK   |   7.414   |
+	     | London |    UK   |   5.5625   |
  

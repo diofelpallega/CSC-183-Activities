@@ -12,8 +12,8 @@ Feature: Observer to notify the time in eu or usa time
 		  |	Observer usa_time_observer says: |2014-12-11 06:32:47PM  |
 		  |	Adding eu_time_observer         |                        |
 		  |	Observer usa_time_observer says:| 2014-12-11 06:32:47PM  |
-		  |	Observer eu_time_observer says: | 2014-12-11 18:31:47    |
+		  |	Observer eu_time_observer says: | 2014-12-11 18:13:47    |
 		  |	removing usa_time_observer      |                        |
-		  |	Observer eu_time_observer says: |  2014-12-11 18:31:47   |
+		  |	Observer eu_time_observer says: |  2014-12-11 18:13:47   |
 
  

@@ -1,0 +1,13 @@
+Creating file...
+Content of dir:  command.py
+Content of dir:  command.py test_file
+File created.
+
+Deleting file...
+Content of dir:  command.py test_file
+Content of dir:  .test_file command.py
+File deleted.
+
+Undo all...
+Undo all finished.
+

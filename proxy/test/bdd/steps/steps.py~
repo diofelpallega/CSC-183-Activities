@@ -20,6 +20,8 @@ def then_i_will_have_these(step):
 	read = a.readlines() 
 	for i in range(len(read)): 
 		list.append(read[i].rstrip('\n'))
+
+	 
  
 	for row in step.hashes:
 		b = row['Result'] 
